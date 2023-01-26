@@ -31,6 +31,8 @@ public class Main {
                     break;
                 case (3):
                     goodsOperations.deleteOperation(goods);
+                case (4):
+                    goodsOperations.findOperation(goods);
             }
         }
     }

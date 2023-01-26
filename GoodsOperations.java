@@ -33,4 +33,15 @@ public class GoodsOperations {
             showOperation(list);
         }
     }
+    protected void findOperation(ArrayList<String> list) {
+        System.out.println("Введите текст для поиска:");
+        String input = scanner.nextLine();
+        String queryLower = input.toLowerCase();
+        for (int i = 0; i < list.size(); i++) {
+            String itemLower = list.get(i).toLowerCase();
+            if (itemLower.contains(queryLower)) {
+                System.out.println((i + 1) + ". " + list.get(i));
+            }
+        }
+    }
 }
