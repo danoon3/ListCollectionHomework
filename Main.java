@@ -4,8 +4,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         ArrayList<String> goods = new ArrayList<>();
-        AddOperation addOperation = new AddOperation();
-        ShowOperation showOperation = new ShowOperation();
+        GoodsOperations goodsOperations = new GoodsOperations();
 
         Scanner scanner = new Scanner(System.in);
         System.out.println("Добрый день!\n" +
@@ -23,13 +22,15 @@ public class Main {
             }
 
             int numberOfOperation = Integer.parseInt(input);
-            switch(numberOfOperation){
-                case(1):
-                    addOperation.addOperation(goods);
+            switch (numberOfOperation) {
+                case (1):
+                    goodsOperations.addOperation(goods);
                     break;
-                case(2):
-                    showOperation.showGoods(goods);
+                case (2):
+                    goodsOperations.showOperation(goods);
                     break;
+                case (3):
+                    goodsOperations.deleteOperation(goods);
             }
         }
     }
