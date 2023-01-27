@@ -5,6 +5,7 @@ public class Main {
     public static void main(String[] args) {
         ArrayList<String> goods = new ArrayList<>();
         GoodsOperations goodsOperations = new GoodsOperations();
+        int numberOfOperation = 0;
 
         Scanner scanner = new Scanner(System.in);
         System.out.println("Добрый день!\n" +
@@ -20,8 +21,12 @@ public class Main {
                 System.out.println("Доброго дня!");
                 break;
             }
-
-            int numberOfOperation = Integer.parseInt(input);
+            try {
+                numberOfOperation = Integer.parseInt(input);
+            } catch (NumberFormatException ex) {
+                System.out.println("Вам необходимо ввести номер операции :)\n");
+                continue;
+            }
             switch (numberOfOperation) {
                 case (1):
                     goodsOperations.addOperation(goods);
@@ -31,8 +36,12 @@ public class Main {
                     break;
                 case (3):
                     goodsOperations.deleteOperation(goods);
+                    break;
                 case (4):
                     goodsOperations.findOperation(goods);
+                    break;
+                default:
+                    break;
             }
         }
     }
